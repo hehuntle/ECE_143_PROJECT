@@ -4,7 +4,8 @@ Created on Sun Feb 14 01:28:40 2021
 
 @author: s
 """
-
+###################################
+# Energy
 # import numpy as np
 import pandas as pd
 
@@ -33,4 +34,25 @@ other = energy[['Entity','Other renewables (terawatt-hours)']]
 top_20_countries = other.groupby('Entity').sum().sort_values('Other renewables (terawatt-hours)', ascending=False)[1:20].index.values
 o = other.plot.line()
 # ax = energy.plot.bar(x='Entity', y=['Solar (terawatt-hours)'], rot=0)
+
+
+###################################
+# Womens Rights
+
+rights = pd.read_csv('gender_data.csv')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
