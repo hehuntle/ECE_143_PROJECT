@@ -6,16 +6,24 @@ Created on Sun Feb 14 01:28:40 2021
 """
 ###################################
 # Energy
-# import numpy as np
+import numpy as np
 import pandas as pd
 import missingno as msno
 
 energy = pd.read_csv('h/energy.csv')
 gdp_2016 = pd.read_csv('h/2016.csv')
-# gender = pd.read_csv('h/gender_data.csv')
-# %matplotlib inlines
+gender = pd.read_csv('h/genderdata.csv')
+
+energy.replace("nan", np.nan)
+gdp_2016.replace("nan", np.nan)
+energy.replace("nan", np.nan)
+# %matplotlib inline
 msno.matrix(energy.sample(250))
+msno.bar(energy.sample(250))
+msno.matrix(gender.sample(250))
+msno.bar(gender.sample(250))
 msno.matrix(gdp_2016.sample(150))
+msno.bar(gdp_2016.sample(150))
 
 
 energy = energy.drop(columns=['Code'])
@@ -45,7 +53,8 @@ o = other.plot.line()
 
 
 ###################################
-# Womens Rights
+# Other stats
+
 
 
 
