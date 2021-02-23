@@ -14,11 +14,12 @@ import matplotlib.pyplot as plt
 energy = pd.read_csv('h/energy.csv')
 gdp_2016 = pd.read_csv('h/2016.csv')
 gender = pd.read_csv('h/genderdata.csv')
+gender.replace("nan",np.nan)
 
 energy.replace("nan", np.nan)
 gdp_2016.replace("nan", np.nan)
 energy.replace("nan", np.nan)
-gender.replace("nan",np.nan)
+
 
 gdp_2016 = gdp_2016[['Country','Economy (GDP per Capita)']]
 # %matplotlib inline
@@ -181,6 +182,24 @@ gender['Country Name'] = gender.index
 gender = gender[['Time','count of womens rights','Economy (GDP per Capita)']]
 plt.figure()
 sns.lineplot(data=gender, x='Time', y='count of womens rights', hue='Economy (GDP per Capita)').set_title('Womens Rights Top 30 Countries')
+
+gender_more = pd.read_csv('h/gender_more.csv')
+gender_more.replace("nan",np.nan)
+
+columns = list(gender_more.columns)
+year = ['2020']
+gender_more = gender_more[~gender_more['Time'].isin(year)]
+temp_series = pd.Series(dtype=int)
+
+# for i in range(len(columns)):
+#   gender_more = gender_more[~gender_more[columns[i]].isnull()]
+
+gender_more['count of womens rights'] = pd.Series(np.zeros(len(gender_more)))
+
+for i in range(4,len(columns)):
+  gender_more['count of womens rights'] += gender_more[columns[i]].apply(lambda x: 1 if x is not Null else 0)
+
+# gender_more['count of womens rights'] = temp_series
 
 
 
