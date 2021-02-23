@@ -5,6 +5,8 @@ Created on Sun Feb 14 01:28:40 2021
 @author: s
 """
 ###################################
+### top countries by GDP
+### or choose 2016 and plot everything
 import numpy as np
 import pandas as pd
 # import missingno as msno
@@ -177,6 +179,7 @@ gender[gen_cols[10]] = gender[gen_cols[10]].apply(lambda x: int(x) if x.isdigit(
 gender['count of womens rights'] = (gender[gen_cols[0]])+(gender[gen_cols[1]])+(gender[gen_cols[2]])+(gender[gen_cols[3]])+(gender[gen_cols[4]])+(gender[gen_cols[5]])+(gender[gen_cols[6]])+(gender[gen_cols[7]])+(gender[gen_cols[8]])+(gender[gen_cols[9]])+(gender[gen_cols[10]])
 top_10_countries = gender.groupby('Country Name').sum().sort_values('count of womens rights', ascending=False)[1:30].index.values
 gender = gender[gender['Country Name'].isin(top_10_countries)]
+##swtich to top 30 in gdp, not womens rights
 gender = gender.set_index('Country Name').join(gdp_2016.set_index('Country'))
 gender['Country Name'] = gender.index
 gender = gender[['Time','count of womens rights','Economy (GDP per Capita)']]
@@ -197,7 +200,7 @@ temp_series = pd.Series(dtype=int)
 gender_more['count of womens rights'] = pd.Series(np.zeros(len(gender_more)))
 
 for i in range(4,len(columns)):
-  gender_more['count of womens rights'] += gender_more[columns[i]].apply(lambda x: 1 if x is not Null else 0)
+  gender_more['count of womens rights'] += gender_more[columns[i]].apply(lambda x: 1 if x  else 0)
 
 # gender_more['count of womens rights'] = temp_series
 
