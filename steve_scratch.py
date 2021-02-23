@@ -146,17 +146,41 @@ sns.lineplot(data=other, x=other.index, y='Other renewables (terawatt-hours)', h
 
 ###################################
 # Womens rights
+gen_cols = ['A woman can apply for a passport in the same way as a man (1=yes; 0=no) [SG.APL.PSPT.EQ]',
+'A woman can be head of household in the same way as a man (1=yes; 0=no) [SG.HLD.HEAD.EQ]',
+'A woman can choose where to live in the same way as a man (1=yes; 0=no) [SG.LOC.LIVE.EQ]',
+'A woman can get a job in the same way as a man (1=yes; 0=no) [SG.GET.JOBS.EQ]',
+'A woman can obtain a judgment of divorce in the same way as a man (1=yes; 0=no) [SG.OBT.DVRC.EQ]',
+'A woman can open a bank account in the same way as a man (1=yes; 0=no) [SG.OPN.BANK.EQ]',
+'A woman can register a business in the same way as a man (1=yes; 0=no) [SG.BUS.REGT.EQ]',
+'A woman can sign a contract in the same way as a man (1=yes; 0=no) [SG.CNT.SIGN.EQ]',
+'A woman can travel outside her home in the same way as a man (1=yes; 0=no) [SG.HME.TRVL.EQ]',
+'A woman can travel outside the country in the same way as a man (1=yes; 0=no) [SG.CTR.TRVL.EQ]',
+'A woman has the same rights to remarry as a man (1=yes; 0=no) [SG.REM.RIGT.EQ]'
+]
+gender = gender.dropna()
+year = ['2020']
+gender = gender[~gender['Time'].isin(year)]
+gender[gen_cols[0]] = gender[gen_cols[0]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[1]] = gender[gen_cols[1]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[2]] = gender[gen_cols[2]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[3]] = gender[gen_cols[3]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[4]] = gender[gen_cols[4]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[5]] = gender[gen_cols[5]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[6]] = gender[gen_cols[6]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[7]] = gender[gen_cols[7]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[8]] = gender[gen_cols[8]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[9]] = gender[gen_cols[9]].apply(lambda x: int(x) if x.isdigit() else 0)
+gender[gen_cols[10]] = gender[gen_cols[10]].apply(lambda x: int(x) if x.isdigit() else 0)
 
-
-
-
-
-
-
-
-
-
-
+gender['count of womens rights'] = (gender[gen_cols[0]])+(gender[gen_cols[1]])+(gender[gen_cols[2]])+(gender[gen_cols[3]])+(gender[gen_cols[4]])+(gender[gen_cols[5]])+(gender[gen_cols[6]])+(gender[gen_cols[7]])+(gender[gen_cols[8]])+(gender[gen_cols[9]])+(gender[gen_cols[10]])
+top_10_countries = gender.groupby('Country Name').sum().sort_values('count of womens rights', ascending=False)[1:30].index.values
+gender = gender[gender['Country Name'].isin(top_10_countries)]
+gender = gender.set_index('Country Name').join(gdp_2016.set_index('Country'))
+gender['Country Name'] = gender.index
+gender = gender[['Time','count of womens rights','Economy (GDP per Capita)']]
+plt.figure()
+sns.lineplot(data=gender, x='Time', y='count of womens rights', hue='Economy (GDP per Capita)').set_title('Womens Rights Top 30 Countries')
 
 
 
