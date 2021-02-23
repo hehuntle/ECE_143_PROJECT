@@ -18,13 +18,14 @@ gender = pd.read_csv('h/genderdata.csv')
 energy.replace("nan", np.nan)
 gdp_2016.replace("nan", np.nan)
 energy.replace("nan", np.nan)
+gender.replace("nan",np.nan)
+
+gdp_2016 = gdp_2016[['Country','Economy (GDP per Capita)']]
 # %matplotlib inline
 # msno.matrix(energy.sample(250))
 # msno.bar(energy.sample(250))
 # msno.heatmap(energy)
 # msno.matrix(gender.sample(250))
-# msno.bar(gender.sample(250))
-# msno.heatmap(gender)
 # msno.matrix(gdp_2016.sample(150))
 # msno.bar(gdp_2016.sample(150))
 # msno.heatmap(gdp_2016)
@@ -39,63 +40,112 @@ energy = energy.set_index('Year')
 #                         )
 
 hydro = energy[['Entity','Hydropower (terawatt-hours)']]
+cont = ['Asia Pacific','South & Central America','North America']
+hydro = hydro[~hydro['Entity'].isin(cont)]
+hydro['year'] = hydro.index
+hydro = hydro.set_index('Entity').join(gdp_2016.set_index('Country'))
+hydro['Entity'] = hydro.index
 top_10_countries = hydro.groupby('Entity').sum().sort_values('Hydropower (terawatt-hours)', ascending=False)[1:10].index.values
 hydro = hydro[hydro['Entity'].isin(top_10_countries)]
-h = hydro.plot.line(title ='Top 10 Countries by Hydropower',
-                    colormap  = 'PiYG',
-                    legend=True,
-                    )
-hydro['Year'] = hydro.index
-# Initialize the FacetGrid object
-sns.set_theme(style="white", rc={"axes.facecolor": (0, 0, 0, 0)})
-pal = sns.cubehelix_palette(10, rot=-.25, light=.7)
-g = sns.FacetGrid(hydro, row="Entity", hue="Entity", aspect=15, height=.5, palette=pal)
-# Draw the densities in a few steps
-g.map(sns.kdeplot, "Year",
-      bw_adjust=.5, clip_on=False,
-      fill=True, alpha=1, linewidth=1.5)
-g.map(sns.kdeplot, "Year", clip_on=False, color="w", lw=2, bw_adjust=.5)
-g.map(plt.axhline, y=0, lw=2, clip_on=False)
+hydro = hydro.set_index('year')
+plt.figure()
+sns.lineplot(data=hydro, x=hydro.index, y='Hydropower (terawatt-hours)', hue='Economy (GDP per Capita)').set_title('Top 10 Countries by Hydropower')
 
-# Define and use a simple function to label the plot in axes coordinates
-def label(x, color, label):
-    ax = plt.gca()
-    ax.text(0, .2, label, fontweight="bold", color=color,
-            ha="left", va="center", transform=ax.transAxes)
-
-
-g.map(label, "Year")
-
-# Set the subplots to overlap
-g.fig.subplots_adjust(hspace=.25)
-
-# Remove axes details that don't play well with overlap
-g.set_titles("")
-g.set(yticks=[])
-g.despine(bottom=True, left=True)
-
-sns.relplot(data=hydro)
-sns.lineplot(data=hydro)
+# solar = energy[['Entity','Solar (terawatt-hours)']]
+# cont = ['Asia Pacific','South & Central America','North America']
+# solar = solar[~solar['Entity'].isin(cont)]
+# top_10_countries = solar.groupby('Entity').sum().sort_values('Solar (terawatt-hours)', ascending=False)[1:10].index.values
+# solar = solar[solar['Entity'].isin(top_10_countries)]
+# plt.figure()
+# sns.lineplot(data=solar, x=solar.index, y='Solar (terawatt-hours)', hue='Entity').set_title('Top 10 Countries by Solar')
 
 solar = energy[['Entity','Solar (terawatt-hours)']]
+cont = ['Asia Pacific','South & Central America','North America']
+solar = solar[~solar['Entity'].isin(cont)]
+solar['year'] = solar.index
+solar = solar.set_index('Entity').join(gdp_2016.set_index('Country'))
+solar['Entity'] = solar.index
 top_10_countries = solar.groupby('Entity').sum().sort_values('Solar (terawatt-hours)', ascending=False)[1:10].index.values
 solar = solar[solar['Entity'].isin(top_10_countries)]
-s = solar.plot.line(title ='Top 10 Countries by Solarpower')
+solar = solar.set_index('year')
+plt.figure()
+sns.lineplot(data=solar, x=solar.index, y='Solar (terawatt-hours)', hue='Economy (GDP per Capita)').set_title('Top 10 Countries by Solar')
+###
+
+# wind = energy[['Entity','Wind (terawatt-hours)']]
+# cont = ['Asia Pacific','South & Central America','North America']
+# wind = wind[~wind['Entity'].isin(cont)]
+# top_10_countries = wind.groupby('Entity').sum().sort_values('Wind (terawatt-hours)', ascending=False)[1:10].index.values
+# wind = wind[wind['Entity'].isin(top_10_countries)]
+# plt.figure()
+# sns.lineplot(data=wind, x=wind.index, y='Wind (terawatt-hours)', hue='Entity').set_title('Top 10 Countries by Wind')
 
 wind = energy[['Entity','Wind (terawatt-hours)']]
+cont = ['Asia Pacific','South & Central America','North America']
+wind = wind[~wind['Entity'].isin(cont)]
+wind['year'] = wind.index
+wind = wind.set_index('Entity').join(gdp_2016.set_index('Country'))
+wind['Entity'] = wind.index
 top_10_countries = wind.groupby('Entity').sum().sort_values('Wind (terawatt-hours)', ascending=False)[1:10].index.values
 wind = wind[wind['Entity'].isin(top_10_countries)]
-w = wind.plot.line(title ='Top 10 Countries by Windpower')
+wind = wind.set_index('year')
+plt.figure()
+sns.lineplot(data=wind, x=wind.index, y='Wind (terawatt-hours)', hue='Economy (GDP per Capita)').set_title('Top 10 Countries by Wind')
+
+# other = energy[['Entity','Other renewables (terawatt-hours)']]
+# cont = ['Asia Pacific','South & Central America','North America']
+# other = other[~other['Entity'].isin(cont)]
+# top_10_countries = other.groupby('Entity').sum().sort_values('Other renewables (terawatt-hours)', ascending=False)[1:10].index.values
+# other = other[other['Entity'].isin(top_10_countries)]
+# plt.figure()
+# sns.lineplot(data=other, x=other.index, y='Other renewables (terawatt-hours)', hue='Entity').set_title('Top 10 Countries by Other Renewables')
 
 other = energy[['Entity','Other renewables (terawatt-hours)']]
+cont = ['Asia Pacific','South & Central America','North America']
+other = other[~other['Entity'].isin(cont)]
+other['year'] = other.index
+other = other.set_index('Entity').join(gdp_2016.set_index('Country'))
+other['Entity'] = other.index
 top_10_countries = other.groupby('Entity').sum().sort_values('Other renewables (terawatt-hours)', ascending=False)[1:10].index.values
 other = other[other['Entity'].isin(top_10_countries)]
-o = other.plot.line(title ='Top 10 Countries by Other Renewables')
-# ax = energy.plot.bar(x='Entity', y=['Solar (terawatt-hours)'], rot=0)
+other = other.set_index('year')
+plt.figure()
+sns.lineplot(data=other, x=other.index, y='Other renewables (terawatt-hours)', hue='Economy (GDP per Capita)').set_title('Top 10 Countries by Other Renewables')
+
+
+#                     )
+# hydro['Year'] = hydro.index
+# # Initialize the FacetGrid object
+# sns.set_theme(style="white", rc={"axes.facecolor": (0, 0, 0, 0)})
+# pal = sns.cubehelix_palette(10, rot=-.25, light=.7)
+# g = sns.FacetGrid(hydro, row="Entity", hue="Entity", aspect=15, height=.5, palette=pal)
+# # Draw the densities in a few steps
+# g.map(sns.kdeplot, "Year",
+#       bw_adjust=.5, clip_on=False,
+#       fill=True, alpha=1, linewidth=1.5)
+# g.map(sns.kdeplot, "Year", clip_on=False, color="w", lw=2, bw_adjust=.5)
+# g.map(plt.axhline, y=0, lw=2, clip_on=False)
+
+# # Define and use a simple function to label the plot in axes coordinates
+# def label(x, color, label):
+#     ax = plt.gca()
+#     ax.text(0, .2, label, fontweight="bold", color=color,
+#             ha="left", va="center", transform=ax.transAxes)
+# g.map(label, "Year")
+# # Set the subplots to overlap
+# g.fig.subplots_adjust(hspace=.25)
+
+# # Remove axes details that don't play well with overlap
+# g.set_titles("")
+# g.set(yticks=[])
+# g.despine(bottom=True, left=True)
+
+# sns.relplot(data=hydro, )
+# # sns.lineplot(data=hydro)
 
 
 ###################################
-# Other stats
+# Womens rights
 
 
 
