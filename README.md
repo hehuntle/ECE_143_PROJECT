@@ -8,3 +8,5 @@ Repo structure
 5) Write README
 
 General guideline - add assertions and comments to each function you write
+
+Deep note to add viz - https://deepnote.com/project/166708f7-24ef-4fd8-a135-4b9e091335b7
