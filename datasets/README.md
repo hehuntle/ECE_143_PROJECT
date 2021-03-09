@@ -4,8 +4,8 @@
 GDP_2016.csv  https://www.kaggle.com/unsdsn/world-happiness   <br>
 energy.csv    https://www.kaggle.com/khadeejahalghadeer/renewable-energy-generation-world-1965-to-2018
 
-## World Bank Open Dataset  https://data.worldbank.org/
+## World Bank Open Dataset  https://databank.worldbank.org/source/world-development-indicators
 education.csv <br>
 health.csv <br>
-health_water_sanitation.csv   https://ourworldindata.org/water-access <br>
+health_water_sanitation.csv  <br>
 income_inequality.csv <br>
