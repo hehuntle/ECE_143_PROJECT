@@ -33,7 +33,7 @@ In order to complete this project, we used following data
       │     ├── health.csv
       │     ├── income_inequality.csv
       ├── ProjectVisualization.ipynb                        
-      ├── Presentation Slides       
+      ├── Group_20_Project_Presentation.pdf       
       └── Group_20_Assignment6.ipynb
       └── README.md                                          
 
