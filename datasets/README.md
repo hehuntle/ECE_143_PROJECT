@@ -1,4 +1,4 @@
-# Datasets contains .csv files used in this project
+# Datasets used in this project
 
 ## Kaggle Dataset
 GDP_2016.csv  https://www.kaggle.com/unsdsn/world-happiness   <br>
