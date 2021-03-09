@@ -1,6 +1,5 @@
-# ECE-143-Project Team 20
+# ECE-143-Project Team 20 Winter 2021, ECE 143. 
 This github is a repository for team 20's group presentation "Modernization and GDP". 
-Winter 2021, ECE 143. 
 
 In order to complete this project, we used following data
 # Datasets: 
