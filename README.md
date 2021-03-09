@@ -44,5 +44,10 @@ numpy <br>
 matplotlib <br>
 scipy <br>
 csv <br>
+Other Inbuilt Python libraries
+
+####
+# Executing the code:
+1. Open ProjectVisualization.ipynb file using jupyter notebook. Execute the file.
       
 
