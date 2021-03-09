@@ -8,7 +8,7 @@ energy.csv    https://www.kaggle.com/khadeejahalghadeer/renewable-energy-generat
 https://databank.worldbank.org/source/world-development-indicators
 
 The above link allowed us to take different slices from the world development indicators, and we were able to generate the below .csv's: <br>
-education.csv <br>
-health.csv <br>
-health_water_sanitation.csv  <br>
-income_inequality.csv <br>
+* education.csv <br>
+* health.csv <br>
+* health_water_sanitation.csv  <br>
+* income_inequality.csv <br>
