@@ -32,7 +32,7 @@ In order to complete this project, we used following data
       │     ├── energy.csv
       │     ├── health.csv
       │     ├── income_inequality.csv
-      ├── ProjectVisualization.ipynb                        
+      ├── Project_Visualization.ipynb                        
       ├── Group_20_Project_Presentation.pdf       
       └── Group_20_Assignment6.ipynb
       └── README.md                                          
@@ -48,6 +48,6 @@ Other Inbuilt Python libraries
 
 ####
 # Executing the code:
-1. Open ProjectVisualization.ipynb file using jupyter notebook. Execute the file.
+1. Open Project_Visualization.ipynb file using jupyter notebook. Execute the file.
       
 
