@@ -16,7 +16,7 @@ In order to complete this project, we used following data
        We used this dataset to collect GDP data. 
 
 
-## All the datafiles are stored in /datasets
+#### All the datafiles are stored in /datasets
 
 # Github File/Folder Organization:
       ├── data_cleaning                                            
@@ -33,7 +33,7 @@ In order to complete this project, we used following data
       │     ├── health.csv
       │     ├── income_inequality.csv
       ├── ProjectVisualization.ipynb                        
-      ├── Presentation Slides       
+      ├── Group_20_Project_Presentation.pdf       
       └── Group_20_Assignment6.ipynb
       └── README.md                                          
 
