@@ -16,6 +16,15 @@ from matplotlib.pyplot import figure
 #filename_1 is the energy.csv file
 #filename_2 is the 2016.csv file, which has gdp info
 def energy_data_clean(filename_1, filename_2):
+       '''
+       This function cleans up and merges two csvs into a clean dataframe with renewable energy data and GDP
+       :param filename_1: csv file for energy
+       :param filename_2: csv file for worldwide GDP for the year 2016
+       :type filename_1: .csv
+       :type filename_2: .csv
+       '''
+       assert isinstance(filename_1, str)
+       assert isinstance(filename_2, str)
        energy = pd.read_csv(filename_1)
        gdp_2016 = pd.read_csv(filename_2)
        energy = energy.set_index('Entity').join(gdp_2016.set_index('Country'))
