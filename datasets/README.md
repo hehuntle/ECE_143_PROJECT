@@ -1,8 +1,8 @@
 # Datasets used in this project
 
 ## Kaggle Dataset
-GDP_2016.csv  https://www.kaggle.com/unsdsn/world-happiness   <br>
-energy.csv    https://www.kaggle.com/khadeejahalghadeer/renewable-energy-generation-world-1965-to-2018
+* GDP_2016.csv  https://www.kaggle.com/unsdsn/world-happiness   <br>
+* energy.csv    https://www.kaggle.com/khadeejahalghadeer/renewable-energy-generation-world-1965-to-2018
 
 ## World Bank Open Dataset  
 https://databank.worldbank.org/source/world-development-indicators
