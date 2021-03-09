@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import os
 
-def heath_data_clean(file_name):
+def education_data_clean(file_name):
 
     assert isinstance(file_name,str)
     assert os.path.exists(file_name)

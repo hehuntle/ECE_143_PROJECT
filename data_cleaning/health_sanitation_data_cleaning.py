@@ -8,7 +8,7 @@ required = ['Country Name','GDP per capita (current US$) [NY.GDP.PCAP.CD]',
             'People using at least basic sanitation services (% of population) [SH.STA.BASS.ZS]']
 
 
-def heath_sanitation_data_clean(file_name):
+def health_sanitation_data_clean(file_name):
     '''
     Clean health data and return a new clean dataframe for the same
     :param file_name: dataset csv file to clean

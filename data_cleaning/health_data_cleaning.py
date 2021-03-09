@@ -8,7 +8,7 @@ required = ['Country Name', 'Life expectancy at birth, total (years) [SP.DYN.LE0
             'Current health expenditure per capita (current US$) [SH.XPD.CHEX.PC.CD]']
 
 
-def heath_data_clean(file_name):
+def health_data_clean(file_name):
     '''
     Clean health data and return a new clean dataframe for the same
     :param file_name: dataset csv file to clean
