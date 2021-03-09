@@ -6,7 +6,7 @@ Repo structure
 3) viz ipynb file - visualization file
 4) link to Google Slides Presentation, read-only link: https://docs.google.com/presentation/d/1pBj6vxRa1FE74-Geeu-ir3NfcIFXrWiH78PZjiFLCrQ/edit?usp=sharing
 5) Write README
-6) Add notebook with the assignment test cases
+6) Week 6 assignment test cases: https://colab.research.google.com/drive/1KNE88I4U5hqQLb-PFc_7KbjMHfHNp7Wg?usp=sharing
 
 See piazza post https://piazza.com/class/kinive0be0q98?cid=476
 
