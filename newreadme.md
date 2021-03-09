@@ -39,7 +39,7 @@ In order to complete this project, we used following data
 
 #### 
 # Modules/Packages used:
-import pandas as pd
+import pandas as pd <br>
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict, defaultdict
