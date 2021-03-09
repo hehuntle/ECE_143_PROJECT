@@ -4,16 +4,16 @@ This github is a repository for team 20's group presentation "Modernization and 
 In order to complete this project, we used following data
 # Datasets: 
 
-### * World Bank Dataset [ WOD (World Ocean Database )](https://data.worldbank.org/)
-      	 We used this database to gather 
+### * World Bank Dataset [lINK](https://data.worldbank.org/)
+       We used this database to gather 
          1. Income Disparity
          2. Health
          3. Sanitation and Water
          4. Renewable Energy
          5. Secondary Education statistics
 
-### * World-Happiness Kaggle Dataset[Kaggle](https://www.kaggle.com/unsdsn/world-happiness)
-          We used this dataset to collect GDP data. 
+### * World-Happiness Kaggle Dataset [lINK](https://www.kaggle.com/unsdsn/world-happiness)
+       We used this dataset to collect GDP data. 
 
 
 ## All the datafiles are stored in /datasets
