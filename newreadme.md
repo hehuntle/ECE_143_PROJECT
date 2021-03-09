@@ -19,7 +19,6 @@ In order to complete this project, we used following data
 ## All the datafiles are stored in /datasets
 
 # Github File/Folder Organization:
-      .
       ├── data_cleaning                                            
       │    ├── education_data_cleaning.py                                  
       │    ├── energy_data_cleaning.py                               
@@ -27,19 +26,19 @@ In order to complete this project, we used following data
       |    └── health_sanitation_data_cleaning.py   
       |    └── income_inequality_data_cleaning.py   
       |
-      ├── datasets                                      # Python code to acquire/clean the data 
+      ├── datasets                                     
       │     ├── GDP_2016.csv
       │     ├── education.csv
       │     ├── energy.csv
       │     ├── health.csv
       │     ├── income_inequality.csv
-      ├── ProjectVisualization.ipynb                          # Jupiter notebook file for all the plots in the presentation
+      ├── ProjectVisualization.ipynb                        
       ├── Presentation Slides       
       └── Group_20_Assignment6.ipynb
-      └── README.md                                           # Readme files
+      └── README.md                                          
 
 #### 
-# Modules/Packages used in the codes:
+# Modules/Packages used:
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
