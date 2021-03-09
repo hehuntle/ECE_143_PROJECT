@@ -25,6 +25,8 @@ def energy_data_clean(filename_1, filename_2):
        '''
        assert isinstance(filename_1, str)
        assert isinstance(filename_2, str)
+       assert os.path.exists(filename_1)
+       assert os.path.exists(filename_2)
        energy = pd.read_csv(filename_1)
        gdp_2016 = pd.read_csv(filename_2)
        energy = energy.set_index('Entity').join(gdp_2016.set_index('Country'))
