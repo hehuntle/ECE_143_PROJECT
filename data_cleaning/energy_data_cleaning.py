@@ -15,7 +15,7 @@ from matplotlib.pyplot import figure
 
 #filename_1 is the energy.csv file
 #filename_2 is the 2016.csv file, which has gdp info
-def data_cleaning(filename_1, filename_2):
+def energy_data_cleaning(filename_1, filename_2):
        energy = pd.read_csv(filename_1)
        gdp_2016 = pd.read_csv(filename_2)
        energy = energy.set_index('Entity').join(gdp_2016.set_index('Country'))
