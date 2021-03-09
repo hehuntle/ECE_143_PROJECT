@@ -32,9 +32,9 @@ In order to complete this project, we used following data
       │     ├── energy.csv
       │     ├── health.csv
       │     ├── income_inequality.csv
-      ├── Project_Visualization.ipynb                        
-      ├── Group_20_Project_Presentation.pdf       
-      └── Group_20_Assignment6.ipynb
+      ├── Project_Visualization.ipynb                         #notebook used to generate visualizations
+      ├── Group_20_Project_Presentation.pdf                   #pdf containing our 
+      └── Group_20_Assignment6.ipynb                          #Functional and Validation checks for Week 6 Homework
       └── README.md                                          
 
 #### 
