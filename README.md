@@ -39,11 +39,11 @@ In order to complete this project, we used following data
 
 #### 
 # Modules/Packages used:
-       pandas <br>
-       numpy <br>
-       matplotlib <br>
-       scipy <br>
-       csv <br>
+       pandas 
+       numpy 
+       matplotlib 
+       scipy 
+       csv 
        Other Inbuilt Python libraries
 
 ####
