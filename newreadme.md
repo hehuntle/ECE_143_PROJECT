@@ -40,11 +40,11 @@ In order to complete this project, we used following data
 #### 
 # Modules/Packages used:
 import pandas as pd <br>
-import numpy as np
-import matplotlib.pyplot as plt
-from collections import OrderedDict, defaultdict
-from scipy.stats import pearsonr
-from matplotlib.pyplot import figure
-import csv
+import numpy as np  <br>
+import matplotlib.pyplot as plt  <br>
+from collections import OrderedDict, defaultdict  <br>
+from scipy.stats import pearsonr  <br>
+from matplotlib.pyplot import figure  <br>
+import csv  <br>
       
 
