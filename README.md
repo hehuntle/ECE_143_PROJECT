@@ -48,6 +48,6 @@ Other Inbuilt Python libraries
 
 ####
 # Executing the code:
-1. Open Project_Visualization.ipynb file using jupyter notebook. Execute the file.
+1. Open Project_Visualization.ipynb[LINK](https://github.com/hehuntle/ECE_143_PROJECT/blob/main/Project_Visualization.ipynb) file using jupyter notebook. Execute the file.
       
 
