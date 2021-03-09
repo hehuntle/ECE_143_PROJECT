@@ -4,7 +4,7 @@
 GDP_2016.csv  https://www.kaggle.com/unsdsn/world-happiness
 
 
-## Worldbank Dataset  https://data.worldbank.org/
+## World Bank Open Dataset  https://data.worldbank.org/
 education.csv <br>
 energy.csv <br>
 health.csv <br>
