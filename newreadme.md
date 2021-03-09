@@ -4,7 +4,7 @@ This github is a repository for team 20's group presentation "Modernization and 
 In order to complete this project, we used following data
 # Datasets: 
 
-### * World Bank Dataset [lINK](https://data.worldbank.org/)
+### * World Bank Dataset [LINK](https://data.worldbank.org/)
        We used this database to gather 
          1. Income Disparity
          2. Health
@@ -12,7 +12,7 @@ In order to complete this project, we used following data
          4. Renewable Energy
          5. Secondary Education statistics
 
-### * World-Happiness Kaggle Dataset [lINK](https://www.kaggle.com/unsdsn/world-happiness)
+### * World-Happiness Kaggle Dataset [LINK](https://www.kaggle.com/unsdsn/world-happiness)
        We used this dataset to collect GDP data. 
 
 
