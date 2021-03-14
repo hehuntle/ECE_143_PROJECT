@@ -4,6 +4,11 @@ import pandas as pd
 import os
 
 def education_data_clean(file_name):
+    '''
+    This function cleans up the education data and returns dataframes
+    :param file_name: file to read data from
+    :return: cleaned dataframes
+    '''
 
     assert isinstance(file_name,str)
     assert os.path.exists(file_name)
