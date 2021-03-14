@@ -45,6 +45,9 @@ In order to complete this project, we used following data
        scipy 
        csv 
        Other Inbuilt Python libraries
+ ####
+ # Installing Packages:
+       pip install scipy numpy matplotlib pandas 
 
 ####
 # Executing the code:
